@@ -1,3 +1,3 @@
-import pages.home as home_page
+import streamlit as st
 
-home_page.main()
+st.switch_page("pages/home.py")
