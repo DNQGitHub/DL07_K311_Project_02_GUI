@@ -12,7 +12,15 @@ def main():
     df = load_data()
     
     query = st.session_state.get("final_query", "")
-    st.markdown("## Kết quả tìm kiếm cho: " + query)
+    
+    if not query:
+        st.markdown("## Chào mừng bạn đến với ứng dụng tìm kiếm bất động sản!")
+        st.markdown("Vui lòng nhập truy vấn tìm kiếm trên thanh bên trái.")
+        st.session_state.searched = False
+        return
+
+    st.markdown("## Top 5 kết quả tìm kiếm cho: ")
+    st.html(f"<p style='font-size: 20px; color: #007bff;'>{query}</p>")
     st.markdown("---")
 
     recommended_posts = recommend_posts_by_query(query, df)
