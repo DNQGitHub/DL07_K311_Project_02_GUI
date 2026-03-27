@@ -3,10 +3,7 @@ import components.sidebar as sidebar
 import components.post_card as post_card
 import components.pagination as pagination
 import pandas as pd
-
-def load_data():
-    df = pd.read_parquet("data/dataset_cleaned.parquet")
-    return df
+from helpers.load_data import load_data
 
 def show_posts(df, page=0, page_size=9):
     start = page * page_size
@@ -26,6 +23,7 @@ def main():
     df = load_data()
     df.info()
     show_posts(df, page, page_size)
+    st.markdown("---")
     pagination.display(df, page, page_size)
 
 main()
