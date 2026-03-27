@@ -1,10 +1,6 @@
 import os
 import gdown
 
-SENTENCE_TRANSFORMER_MODEL_DRIVE_URL = 'https://drive.google.com/file/d/1kwB0OiI6NF5noqcdFx31XbvOFf3qr51h/view?usp=drive_link'
-SENTENCE_TRANSFORMER_EMBEDDING_DRIVE_URL = 'https://drive.google.com/file/d/1lwjvkdgopOg5ioQ9j3NGWIKF1IbbBROP/view?usp=drive_link'
-SIM_MATRIX_SENTENCE_TRANSFORMER_DRIVE_URL = 'https://drive.google.com/file/d/1iK-HByrd5YPt8-On4XPKHDpuMQUMUTSd/view?usp=drive_link'
-
 SENTENCE_TRANSFORMER_MODEL_FILE_ID = '1kwB0OiI6NF5noqcdFx31XbvOFf3qr51h'
 SENTENCE_TRANSFORMER_EMBEDDING_FILE_ID = '1lwjvkdgopOg5ioQ9j3NGWIKF1IbbBROP'
 SIM_MATRIX_SENTENCE_TRANSFORMER_FILE_ID = '1iK-HByrd5YPt8-On4XPKHDpuMQUMUTSd'

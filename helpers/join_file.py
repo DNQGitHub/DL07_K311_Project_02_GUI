@@ -1,4 +1,3 @@
-import pickle
 import os
 
 def join_files(dest_path, chunk_prefix='', chunk_folder='chunks'):
