@@ -1,4 +1,5 @@
 import re
+from helpers.load_data import load_recommendation_stopwords
 
 def preserve_location(text):
     locations = [
@@ -43,12 +44,7 @@ def clean_text(text):
     return text
 
 def advanced_clean(text):
-    STOP_WORD_FILE = 'data/stopwords.txt'
-    
-    with open(STOP_WORD_FILE, 'r', encoding='utf-8') as file:
-        stopwords = file.read()
-
-    stopwords = stopwords.split('\n')
+    stopwords = load_recommendation_stopwords()
     
     words = text.split()
     

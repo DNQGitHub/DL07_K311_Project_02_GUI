@@ -3,7 +3,7 @@ import components.sidebar as sidebar
 import components.post_detail as post_detail
 import components.post_price_chart as post_price_chart
 import components.post_card_list as post_card_list
-from helpers.load_data import load_data, load_sim_matrix
+from helpers.load_data import load_recommendation_data, load_recommendation_sim_matrix
 from helpers.recommendation.recommend_posts_by_idx import recommend_posts_by_idx
 
 def main():
@@ -24,7 +24,7 @@ def main():
         st.markdown("[Quay lại trang danh sách bài đăng](posts)")
         return
     
-    df = load_data()    
+    df = load_recommendation_data()    
     
     if post_id >= len(df) or post_id < 0:
         st.write("ID bài đăng không hợp lệ. Vui lòng quay lại trang danh sách bài đăng.")
@@ -38,7 +38,7 @@ def main():
     st.write("### Biểu đồ giá bán theo thời gian")
     post_price_chart.display(post['bieu_do_gia'])
     
-    sim_matrix = load_sim_matrix()
+    sim_matrix = load_recommendation_sim_matrix()
     recommended_posts = recommend_posts_by_idx(
         idx=post_id, 
         sim_matrix=sim_matrix, 

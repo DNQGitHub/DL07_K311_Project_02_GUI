@@ -1,10 +1,10 @@
 import streamlit as st
 import components.search_input as search_input
 import components.sidebar_post_list as sidebar_post_list
-from helpers.load_data import load_data
+from helpers.load_data import load_recommendation_data
 
 def display():
-    df = load_data()
+    df = load_recommendation_data()
     posts = df[:10]
     
     

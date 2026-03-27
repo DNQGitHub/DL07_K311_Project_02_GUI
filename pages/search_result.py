@@ -1,7 +1,7 @@
 import streamlit as st
 import components.sidebar as sidebar
 import components.post_card_list as post_card_list
-from helpers.load_data import load_data
+from helpers.load_data import load_recommendation_data
 from helpers.recommendation.recommend_posts_by_query import recommend_posts_by_query
 
 def main():
@@ -9,7 +9,7 @@ def main():
         st.session_state.searched = False
     
     sidebar.display()
-    df = load_data()
+    df = load_recommendation_data()
     
     query = st.session_state.get("final_query", "")
     

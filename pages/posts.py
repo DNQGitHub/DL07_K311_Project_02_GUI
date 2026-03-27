@@ -2,7 +2,7 @@ import streamlit as st
 import components.sidebar as sidebar
 import components.post_card_list as post_card_list
 import components.pagination as pagination
-from helpers.load_data import load_data
+from helpers.load_data import load_recommendation_data
 
 def get_pagination_params():
     page_str = st.query_params.get("page", "0")
@@ -32,7 +32,7 @@ def main():
     st.markdown("Khám phá các bài đăng bất động sản mới nhất trên thị trường. Duyệt qua danh sách các căn hộ, nhà phố, và đất nền được cập nhật liên tục để tìm kiếm cơ hội đầu tư hoặc nơi an cư lý tưởng cho bạn và gia đình.")
     
     page, page_size = get_pagination_params()
-    df = load_data()
+    df = load_recommendation_data()
     posts = get_post_by_page(df, page, page_size)
     
     post_card_list.display(posts)

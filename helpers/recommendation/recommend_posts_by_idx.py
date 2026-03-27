@@ -1,7 +1,4 @@
 import numpy as np
-from helpers.load_data import load_recommendation_embeddings, load_recommendation_model
-from helpers.data_preprocessing import preprocess_query
-from helpers.data_featuring import extract_district, extract_price
 
 def price_sim(i, j, df):
     return 1 - abs(df.loc[i,"gia_scaled"] - df.loc[j,"gia_scaled"])
