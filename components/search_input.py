@@ -5,7 +5,7 @@ def display():
         st.session_state.searched = False
     
     query = st.text_input(
-        "",
+        "Tìm kiếm nhà",
         label_visibility="collapsed",
         key="search_query",
         placeholder="Tìm kiếm nhà...",
