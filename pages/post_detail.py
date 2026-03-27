@@ -1,13 +1,13 @@
 import streamlit as st
-import components.sidebar as sidebar
 import pandas as pd
 import numpy as np
+import components.sidebar as sidebar
+import components.post_card as post_card
+import pickle
+from sklearn.preprocessing import MinMaxScaler
 from helpers.load_data import load_data
 from datetime import datetime
 from dateutil import relativedelta
-import pickle
-from sklearn.preprocessing import MinMaxScaler
-import components.post_card as post_card
 
 
 # 0   tieu_de              7932 non-null   object

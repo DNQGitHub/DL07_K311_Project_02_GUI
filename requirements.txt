@@ -7,3 +7,8 @@ scikit-learn
 gensim
 pyvi
 beautifulsoup4
+gdown
+pickle
+sentence_transformers
+torch
+torchvision

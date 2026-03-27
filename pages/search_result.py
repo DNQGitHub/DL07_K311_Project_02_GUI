@@ -9,7 +9,6 @@ import pickle
 import re
 from sklearn.preprocessing import MinMaxScaler
 
-
 def extract_price(query):
     match = re.search(r"(\d+(\.\d+)?)\s*tỷ", query)
     if match:
@@ -176,6 +175,9 @@ def recommend_from_query_bert_only(
     
 
 def main():
+    if "searched" not in st.session_state:
+        st.session_state.searched = False
+    
     sidebar.display()
     df = load_data()
     

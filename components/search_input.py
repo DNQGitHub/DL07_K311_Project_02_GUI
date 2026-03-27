@@ -1,9 +1,9 @@
 import streamlit as st
 
-if "searched" not in st.session_state:
-    st.session_state.searched = False
-
 def display():
+    if "searched" not in st.session_state:
+        st.session_state.searched = False
+    
     query = st.text_input(
         "",
         label_visibility="collapsed",
@@ -12,6 +12,6 @@ def display():
     )
 
     if query and not st.session_state.searched:
-        st.session_state.final_query = query   # ✅ quan trọng
+        st.session_state.final_query = query
         st.session_state.searched = True
         st.switch_page("pages/search_result.py")
