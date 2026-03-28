@@ -41,4 +41,5 @@ def main():
     st.markdown("---")
     pagination.display(df, page, page_size)
 
-main()
+if __name__ == "__main__":
+    main()

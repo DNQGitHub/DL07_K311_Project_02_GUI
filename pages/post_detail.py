@@ -65,4 +65,5 @@ def main():
     st.markdown("---")
     st.markdown("[Quay lại trang danh sách bài đăng](posts)")
 
-main()
+if __name__ == "__main__":
+    main()

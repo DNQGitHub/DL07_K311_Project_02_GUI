@@ -51,4 +51,5 @@ def main():
     - Phân công dựa trên thế mạnh từng thành viên
     """)
 
-main()
+if __name__ == "__main__":
+    main()

@@ -68,4 +68,5 @@ def main():
     st.caption("Data Science Process — Sklearn + PySpark — Gensim + Cosine Similarity")
 
 
-main()
+if __name__ == "__main__":
+    main()

@@ -32,4 +32,6 @@ def main():
                         
             clusterize_result = clusterize(user_df, our_df)
             st.write(f"Nhà ở được phân vào phân khúc {clusterize_result['cluster_name']}")
-main()
+
+if __name__ == "__main__":
+    main()
