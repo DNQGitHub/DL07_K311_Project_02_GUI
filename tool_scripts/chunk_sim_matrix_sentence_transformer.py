@@ -1,3 +1,7 @@
+import sys
+import os
+sys.path.insert(0, os.getcwd())
+
 from helpers.chunk_file import chunk_file
 
 chunk_file(

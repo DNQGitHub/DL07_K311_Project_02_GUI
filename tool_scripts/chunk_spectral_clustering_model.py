@@ -5,7 +5,7 @@ sys.path.insert(0, os.getcwd())
 from helpers.chunk_file import chunk_file
 
 chunk_file(
-    source_path='models/recommendation/sentence_transformer_embeddings.pkl',
+    source_path='models/clustering/_backup/spectral_clustering_model.pkl',
     chunk_size=24*1024*1024,
-    dest_folder="models/recommendation/chunked/sentence_transformer_embeddings",
+    dest_folder="models/clustering/chunked/spectral_clustering_model",
     dest_file_pattern='{0}.bin')
