@@ -28,7 +28,7 @@ def load_recommendation_stopwords():
         stopwords = file.read().split('\n')
     return stopwords
 
-# @st.cache_data
+@st.cache_data
 def load_recommendation_model():
     model = pickle.load(open(RECOMMENDATION_MODEL_PATH, 'rb'))
     return model

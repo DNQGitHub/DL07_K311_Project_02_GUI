@@ -22,3 +22,10 @@ def display():
         st.page_link(label="Các Bài Đăng", page="pages/posts.py")
         
         sidebar_post_list.display(posts)
+        
+        st.markdown("---")
+        st.markdown("#### © 2026 - Nhóm 09 - Dự án đề xuất nhà dựa trên nội dung & phân cụm nhà")
+        st.markdown("*GVHD: Thạc sỹ Khuất Thùy Phương*")
+        st.markdown("Thành Viên Nhóm:")
+        st.markdown("[Phan Ngọc Minh Quân](mailto:quan.phanngocminh111@gmail.com)")
+        st.markdown("[Đoàn Nhật Quang](mailto:dnq.httt@gmail.com)")
