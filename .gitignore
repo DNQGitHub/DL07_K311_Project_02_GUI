@@ -1,4 +1,4 @@
 __pycache__ 
 
-models/**/*.pkl
-models/**/_backup/*.pkl
+features/**/models/**/*.pkl
+features/**/models/_backup/*.pkl

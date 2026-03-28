@@ -1,8 +1,8 @@
 import streamlit as st
 import components.sidebar as sidebar
 import components.post_card_list as post_card_list
-from helpers.recommendation.load_data import load_recommendation_data
-from helpers.recommendation.recommend_posts_by_query import recommend_posts_by_query
+from features.recommendation.helpers.load_data import load_recommendation_data
+from features.recommendation.helpers.recommend_posts_by_query import recommend_posts_by_query
 
 def main():
     if "searched" not in st.session_state:

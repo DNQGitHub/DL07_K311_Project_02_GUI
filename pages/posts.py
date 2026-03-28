@@ -2,7 +2,7 @@ import streamlit as st
 import components.sidebar as sidebar
 import components.post_card_list as post_card_list
 import components.pagination as pagination
-from helpers.recommendation.load_data import load_recommendation_data
+from features.recommendation.helpers.load_data import load_recommendation_data
 
 def get_pagination_params():
     page_str = st.query_params.get("page", "0")

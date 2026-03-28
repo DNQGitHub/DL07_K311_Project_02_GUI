@@ -1,7 +1,7 @@
 import pandas as pd
 import numpy as np
 from sklearn.preprocessing import StandardScaler
-from helpers.clustering.load_data import load_clustering_model
+from features.clustering.helpers.load_data import load_clustering_model
 
 
 def clusterize(user_df, our_df):
