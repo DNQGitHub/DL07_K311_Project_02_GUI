@@ -1,5 +1,5 @@
 import re
-from helpers.load_data import load_recommendation_stopwords
+from helpers.recommendation.load_data import load_recommendation_stopwords
 
 def preserve_location(text):
     locations = [

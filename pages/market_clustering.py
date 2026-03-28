@@ -2,7 +2,7 @@ import streamlit as st
 import pandas as pd
 import components.sidebar as sidebar
 from helpers.clustering.clusterize import clusterize
-from helpers.load_data import load_clustering_data
+from helpers.clustering.load_data import load_clustering_data
 from helpers.clustering.data_featuring import data_featuring
     
 def main():

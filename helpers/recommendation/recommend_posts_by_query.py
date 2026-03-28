@@ -1,8 +1,8 @@
 import numpy as np
 from sklearn.metrics.pairwise import cosine_similarity
-from helpers.load_data import load_recommendation_embeddings, load_recommendation_model
-from helpers.data_preprocessing import preprocess_query
-from helpers.data_featuring import extract_district, extract_price
+from helpers.recommendation.load_data import load_recommendation_embeddings, load_recommendation_model
+from helpers.recommendation.data_preprocessing import preprocess_query
+from helpers.recommendation.data_featuring import extract_district, extract_price
 
 def price_sim(price_query, price_series, alpha=1.0):
     if price_query == 0:

@@ -3,7 +3,7 @@ import components.sidebar as sidebar
 import components.post_detail as post_detail
 import components.post_price_chart as post_price_chart
 import components.post_card_list as post_card_list
-from helpers.load_data import load_recommendation_data, load_recommendation_sim_matrix
+from helpers.recommendation.load_data import load_recommendation_data, load_recommendation_sim_matrix
 from helpers.recommendation.recommend_posts_by_idx import recommend_posts_by_idx
 
 def main():

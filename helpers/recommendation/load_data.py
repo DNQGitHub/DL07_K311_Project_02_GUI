@@ -3,7 +3,6 @@ import pandas as pd
 from sklearn.preprocessing import MinMaxScaler
 import pickle
 
-# --RECOMMENDATION--------------
 RECOMMENDATION_DATA_PATH = "data/recommendation/dataset_cleaned.parquet"
 RECOMMENDATION_STOPWORDS_PATH = "data/recommendation/stopwords.txt"
 RECOMMENDATION_SIM_MATRIX_PATH = "models/recommendation/sim_matrix_sentence_transformer.pkl"
@@ -38,17 +37,3 @@ def load_recommendation_model():
 def load_recommendation_embeddings():
     embeddings = pickle.load(open(RECOMMENDATION_EMBEDDINGS_PATH, 'rb'))
     return embeddings
-
-# --CLUSTERING---------------
-CLUSTERING_DATA_PATH = "data/clustering/data_modeling.parquet"
-CLUSTERING_MODEL_PATH = 'models/clustering/spectral_clustering_model.pkl'
-
-@st.cache_data
-def load_clustering_data():
-    df = pd.read_parquet(CLUSTERING_DATA_PATH)
-    return df
-
-@st.cache_data
-def load_clustering_model():
-    model = pickle.load(open(CLUSTERING_MODEL_PATH, 'rb'))
-    return model
