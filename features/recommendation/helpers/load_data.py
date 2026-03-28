@@ -31,7 +31,8 @@ def load_recommendation_stopwords():
 
 @st.cache_resource
 def load_recommendation_model():
-    model = SentenceTransformer('features/recommendation/models/sentence_transformer_model_half.pkl')
+    model = pickle.load(open(RECOMMENDATION_MODEL_PATH, 'rb'))
+    # model = SentenceTransformer('features/recommendation/models/sentence_transformer_model_half.pkl')
     return model
 
 @st.cache_resource
