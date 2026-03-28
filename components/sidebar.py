@@ -16,7 +16,7 @@ def display():
         st.title("Project 02: Đề xuất nhà dựa trên nội dung & phân cụm nhà")
         
         st.page_link(label="Trang Chủ", page="pages/home.py")
-        st.page_link(label="Vấn Đề Kinh Doanh", page="pages/business_problem.py")
+        st.page_link(label="Bối cảnh & Mục tiêu", page="pages/business_problem.py")
         # st.page_link(label="Phân Công Nhiệm Vụ", page="pages/task_assignment.py")
         st.page_link(label="Phân Cụm Thị Trường", page="pages/market_clustering.py")
         st.page_link(label="Các Bài Đăng", page="pages/posts.py")
