@@ -1,3 +1,4 @@
+from sentence_transformers import SentenceTransformer
 import streamlit as st
 import pandas as pd
 from sklearn.preprocessing import MinMaxScaler
@@ -30,7 +31,7 @@ def load_recommendation_stopwords():
 
 @st.cache_data
 def load_recommendation_model():
-    model = pickle.load(open(RECOMMENDATION_MODEL_PATH, 'rb'))
+    model = SentenceTransformer('features/recommendation/models/sentence_transformer_model_half.pkl')
     return model
 
 @st.cache_data
