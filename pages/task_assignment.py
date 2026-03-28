@@ -3,7 +3,7 @@ import pandas as pd
 import components.sidebar as sidebar
 
 def main():
-    st.set_page_config(page_title="Work Assignment")
+    st.set_page_config(page_title="Work Assignment", layout="wide")
 
     sidebar.display()
 

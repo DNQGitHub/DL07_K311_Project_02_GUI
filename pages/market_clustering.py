@@ -6,6 +6,8 @@ from features.clustering.helpers.load_data import load_clustering_data
 from features.clustering.helpers.data_featuring import data_featuring
     
 def main():
+    st.set_page_config(page_title="Market Clustering", layout="wide")
+    
     sidebar.display()
     
     our_df = load_clustering_data()

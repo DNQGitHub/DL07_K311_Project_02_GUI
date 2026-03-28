@@ -26,6 +26,8 @@ def get_post_by_page(df, page, page_size):
     return df[start:end]
 
 def main():
+    st.set_page_config(page_title="Posts", layout="wide")
+    
     sidebar.display()
 
     st.markdown("## Các bài đăng bất động sản mới nhất trên thị trường")

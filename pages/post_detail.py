@@ -12,6 +12,8 @@ from features.clustering.helpers.clusterize import clusterize
 from features.clustering.helpers.load_data import load_clustering_data
 
 def main():
+    st.set_page_config(page_title="Post Detail", layout="wide")
+    
     sidebar.display()
     
     post_id = st.query_params.get("post_id", None)

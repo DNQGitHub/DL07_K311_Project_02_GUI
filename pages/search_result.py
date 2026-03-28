@@ -5,6 +5,8 @@ from features.recommendation.helpers.load_data import load_recommendation_data
 from features.recommendation.helpers.recommend_posts_by_query import recommend_posts_by_query
 
 def main():
+    st.set_page_config(page_title="Search Result", layout="wide")
+    
     if "searched" not in st.session_state:
         st.session_state.searched = False
     

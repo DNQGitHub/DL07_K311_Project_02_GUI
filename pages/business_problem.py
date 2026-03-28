@@ -2,7 +2,7 @@ import streamlit as st
 import components.sidebar as sidebar
 
 def main():
-    st.set_page_config(page_title="Business Problem")
+    st.set_page_config(page_title="Business Problem", layout="wide")
 
     sidebar.display()
 
