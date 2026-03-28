@@ -39,13 +39,35 @@ def main():
             }
 
             .pd-classification {
-                background: rgba(15, 32, 39, 0.02);
-                border-left: 4px solid rgba(15, 32, 39, 0.2);
-                padding: 1rem;
-                border-radius: 6px;
-                margin: 0.8rem 0;
-                font-size: 0.95rem;
+                display: flex;
+                align-items: center;
+                gap: 0.6rem;
+                background: #ffffff;
+                border: 1px solid rgba(15, 32, 39, 0.1);
+                padding: 0.75rem 0.9rem;
+                border-radius: 8px;
+                margin: 0.75rem 0 1rem 0;
                 color: #142e3a;
+                box-shadow: none;
+            }
+
+            .pd-classification-text {
+                font-size: 0.96rem;
+                font-weight: 600;
+                color: #203a43;
+                line-height: 1.35;
+            }
+
+            .pd-classification-pill {
+                display: inline-block;
+                margin-left: 0;
+                padding: 0.24rem 0.58rem;
+                border-radius: 999px;
+                background: linear-gradient(135deg, #ff6b35 0%, #ff4757 100%);
+                color: #ffffff;
+                font-size: 0.82rem;
+                font-weight: 800;
+                white-space: nowrap;
             }
 
             .pd-back-link {
@@ -99,7 +121,15 @@ def main():
     post_df = data_featuring(post_df)
     our_df = load_clustering_data()
     clusterize_result = clusterize(post_df, our_df)
-    st.markdown(f'<div class="pd-classification">Nhà đất này thuộc phân khúc <strong>{clusterize_result["cluster_name"]}</strong></div>', unsafe_allow_html=True)
+    st.markdown(
+        f'''
+        <div class="pd-classification">
+            <div class="pd-classification-text">Nhà đất này thuộc phân khúc:</div>
+            <span class="pd-classification-pill">{clusterize_result["cluster_name"]}</span>
+        </div>
+        ''',
+        unsafe_allow_html=True,
+    )
     
     st.markdown('<div class="pd-section-title">📊 Biểu đồ giá bán theo thời gian</div>', unsafe_allow_html=True)
     post_price_chart.display(post['bieu_do_gia'])

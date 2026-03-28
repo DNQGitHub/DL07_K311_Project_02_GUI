@@ -21,17 +21,22 @@ _POST_DETAIL_STYLES = """
         font-size: 1.7rem;
         font-weight: 800;
         color: #0f2027;
-        margin: 0 0 0.8rem 0;
+        margin: 0 0 0.25rem 0;
         line-height: 1.3;
     }
 
     .post-detail-price {
         font-size: 1.5rem;
         font-weight: 800;
-        background: linear-gradient(120deg, #0f2027 0%, #203a43 100%);
+        background: linear-gradient(135deg, #ff6b35 0%, #ff4757 100%);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
         background-clip: text;
+        padding: 0.25rem 0;
+        background-color: rgba(255, 107, 53, 0.08);
+        border-radius: 8px;
+        display: block;
+        margin: 0;
     }
 
     .post-detail-description {
@@ -61,22 +66,23 @@ _POST_DETAIL_STYLES = """
     }
 
     /* Contact list styling - linear */
-    .post-detail-section:nth-of-type(2) .post-detail-list {
-        display: flex;
-        flex-direction: column;
-        gap: 0.8rem;
-    }
-
-    .post-detail-section:nth-of-type(2) .post-detail-item {
+    .contact-item {
         display: flex;
         flex-direction: column;
         gap: 0.3rem;
-        padding: 0.7rem 0;
-        border-bottom: 1px solid rgba(15, 32, 39, 0.05);
+        padding: 0.7rem 0 !important;
+        border: none !important;
     }
 
-    .post-detail-section:nth-of-type(2) .post-detail-item:last-child {
-        border-bottom: none;
+    .contact-item:last-child {
+        border-bottom: none !important;
+    }
+
+    .price-icon {
+        display: inline;
+        font-weight: 800;
+        color: #ffc107;
+        margin-right: 0.5em;
     }
 
     /* Info sections styling - grid boxes */
@@ -147,7 +153,7 @@ def display(post):
             <!-- Header Section -->
             <div class="post-detail-header">
                 <div class="post-detail-title">{tieu_de}</div>
-                <div class="post-detail-price">💰 {gia_ban} VND</div>
+                <div class="post-detail-price"><span class="price-icon">Giá:</span> {gia_ban} VND</div>
             </div>
 
             <!-- Description -->
@@ -159,11 +165,11 @@ def display(post):
             <div class="post-detail-section">
                 <div class="post-detail-section-title">📞 Thông tin liên hệ</div>
                 <div class="post-detail-list">
-                    <div class="post-detail-item">
+                    <div class="post-detail-item contact-item">
                         <div class="post-detail-label">📍 Địa chỉ</div>
                         <div class="post-detail-value">{dia_chi}</div>
                     </div>
-                    <div class="post-detail-item">
+                    <div class="post-detail-item contact-item">
                         <div class="post-detail-label">☎️ Điện thoại</div>
                         <div class="post-detail-value">{dien_thoai}</div>
                     </div>
