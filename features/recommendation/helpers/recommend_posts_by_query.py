@@ -5,7 +5,9 @@ from features.recommendation.helpers.data_preprocessing import preprocess_query
 from features.recommendation.helpers.data_featuring import extract_district, extract_price
 
 def price_sim(price_query, price_series, alpha=1.0):
-    if price_query == 0:
+    print(f"Price Query: {price_query}")
+    
+    if price_query == 0 or price_query is None:
         return np.ones(len(price_series))
     
     diff_ratio = np.abs(price_series - price_query) / price_query

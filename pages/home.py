@@ -2,7 +2,7 @@ import streamlit as st
 import components.sidebar as sidebar
 
 def main():
-    st.set_page_config(page_title="Home", layout="wide")
+    st.set_page_config(page_title="Home")
     
     sidebar.display()
 
