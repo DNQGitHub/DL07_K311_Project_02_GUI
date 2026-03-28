@@ -1,10 +1,15 @@
+
 import streamlit as st
+import pandas as pd
 import components.sidebar as sidebar
 import components.post_detail as post_detail
 import components.post_price_chart as post_price_chart
 import components.post_card_list as post_card_list
 from features.recommendation.helpers.load_data import load_recommendation_data, load_recommendation_sim_matrix
 from features.recommendation.helpers.recommend_posts_by_idx import recommend_posts_by_idx
+from features.clustering.helpers.data_featuring import data_featuring, parse_bieu_do_gia, transform_dien_tich, transform_so_phong_ngu
+from features.clustering.helpers.clusterize import clusterize
+from features.clustering.helpers.load_data import load_clustering_data
 
 def main():
     sidebar.display()
@@ -32,8 +37,14 @@ def main():
         return
 
     post = df.iloc[post_id]
-
     post_detail.display(post)
+    
+    st.write("### Phân loại nhà đất")
+    post_df = pd.DataFrame([post])
+    post_df = data_featuring(post_df)
+    our_df = load_clustering_data()
+    clusterize_result = clusterize(post_df, our_df)
+    st.write(f"Nhà đất thuộc phân khúc {clusterize_result['cluster_name']}")
     
     st.write("### Biểu đồ giá bán theo thời gian")
     post_price_chart.display(post['bieu_do_gia'])

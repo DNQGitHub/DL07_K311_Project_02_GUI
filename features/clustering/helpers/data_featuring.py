@@ -1,6 +1,65 @@
 import numpy as np
+import pandas as pd
+import ast
+
+def parse_bieu_do_gia(val):
+    try:
+        lst = ast.literal_eval(val)
+        if isinstance(lst, list) and len(lst) >= 2:
+            return lst
+    except:
+        return []
+    
+def transform_dien_tich(value):
+        if pd.isnull(value):
+            return value
+        if isinstance(value, str):
+            value = value.replace("m2", "").replace("m²", "").strip()
+            try:
+                return float(value)
+            except ValueError:
+                return np.nan
+        return value
+    
+def transform_so_phong_ngu(value):
+        if pd.isnull(value):
+            return value
+        if isinstance(value, str):
+            if value.lower() in ["nhiều hơn 10 phòng"]:
+                return 11  # Giả sử "nhiều hơn 10 phòng" là 11
+            value = value.replace("phòng", "").strip()
+            try:
+                return int(value)
+            except ValueError:
+                return np.nan
+        return value
 
 def data_featuring(df):
+    if("full_text" not in df.columns):
+        df["full_text"] = df["mo_ta"]
+        
+    if("gia_ban" not in df.columns or isinstance(df["gia_ban"].iloc[0], str)):
+        df["gia_ban"] = df["gia_ban_num"]
+        
+    if("dien_tich" in df.columns and isinstance(df["dien_tich"].iloc[0], str)):
+        df['dien_tich'] = df['dien_tich'].apply(transform_dien_tich)
+
+    if("so_phong_ngu" in df.columns and isinstance(df["so_phong_ngu"].iloc[0], str)):
+        df['so_phong_ngu'] = df['so_phong_ngu'].apply(transform_so_phong_ngu)
+    
+    if("bdg_parsed" not in df.columns and "bieu_do_gia" in df.columns):
+        df["bdg_parsed"] = df["bieu_do_gia"].apply(parse_bieu_do_gia)
+        valid = df["bdg_parsed"].notna()
+        
+        if("gia_kv_hien_tai" not in df.columns):
+            df.loc[valid, "gia_kv_hien_tai"] = df.loc[valid, "bdg_parsed"].apply(lambda x: x[-1])
+        if("gia_kv_mean" not in df.columns):
+            df.loc[valid, "gia_kv_mean"]     = df.loc[valid, "bdg_parsed"].apply(lambda x: np.mean(x))
+        if("gia_kv_trend" not in df.columns):
+            df.loc[valid, "gia_kv_trend"]    = df.loc[valid, "bdg_parsed"].apply(lambda x: x[-1] - x[0])
+        if("gia_kv_volatility" not in df.columns):
+            df.loc[valid, "gia_kv_volatility"] = df.loc[valid, "bdg_parsed"].apply(lambda x: np.std(x))
+    
     # Vị trí & Lưu thông
     df['is_mat_tien'] = df['full_text'].str.contains(r'mặt tiền|mt |mặt đường|mt', regex=True).astype(int)
     df['is_hxh'] = df['full_text'].str.contains(r'hẻm xe hơi|hxh|hẻm ô tô|hẻm oto|hẻm 6m|hẻm 8m|hẻm rộng', regex=True).astype(int)
@@ -36,3 +95,4 @@ def data_featuring(df):
     df["log_gia_ban"] = np.log(df["gia_ban"])
     
     return df
+
