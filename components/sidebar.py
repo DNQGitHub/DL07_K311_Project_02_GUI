@@ -12,8 +12,8 @@ def _inject_sidebar_styles():
         """
         <style>
             section[data-testid="stSidebar"] {
-                background:
-                    linear-gradient(165deg, #0f2027 0%, #203a43 52%, #2c5364 100%);
+                background: #ffffff;
+                border-right: 1px solid rgba(15, 32, 39, 0.08);
             }
 
             section[data-testid="stSidebar"] .block-container {
@@ -26,22 +26,40 @@ def _inject_sidebar_styles():
             section[data-testid="stSidebar"] span,
             section[data-testid="stSidebar"] li,
             section[data-testid="stSidebar"] div {
-                color: #edf3fb;
+                color: #142e3a;
             }
 
             section[data-testid="stSidebar"] hr {
-                border-color: rgba(255, 255, 255, 0.18);
+                border-color: rgba(15, 32, 39, 0.12);
+            }
+
+            section[data-testid="stSidebar"] [data-testid="stTextInput"] div[data-baseweb="input"] {
+                background: transparent !important;
+                border: 1px solid rgba(15, 32, 39, 0.24) !important;
+                border-radius: 8px !important;
+                box-shadow: none !important;
+            }
+
+            section[data-testid="stSidebar"] [data-testid="stTextInput"] {
+                margin-bottom: 0.3rem;
+            }
+
+            section[data-testid="stSidebar"] [data-testid="stTextInput"] div[data-baseweb="input"]:focus-within {
+                border-color: rgba(15, 32, 39, 0.55) !important;
+                box-shadow: 0 0 0 1px rgba(15, 32, 39, 0.15) !important;
             }
 
             section[data-testid="stSidebar"] [data-testid="stTextInput"] input {
-                background: rgba(255, 255, 255, 0.08);
-                border: 1px solid rgba(255, 255, 255, 0.22);
-                color: #f7fbff;
+                background: transparent !important;
+                color: #0f2027 !important;
+                -webkit-text-fill-color: #0f2027 !important;
+                caret-color: #0f2027 !important;
                 font-size: 0.95rem;
             }
 
             section[data-testid="stSidebar"] [data-testid="stTextInput"] input::placeholder {
-                color: #b7c6d8;
+                color: #6c7d8a !important;
+                -webkit-text-fill-color: #6c7d8a !important;
             }
 
             .sb-project-title {
@@ -50,25 +68,25 @@ def _inject_sidebar_styles():
                 line-height: 1.26;
                 margin-top: 0.35rem;
                 margin-bottom: 0.55rem;
-                color: #f3f7fd;
+                color: #0f2027;
             }
 
             .sb-top-banner {
-                font-size: 32px;
+                font-size: 29px;
                 font-weight: 800;
                 letter-spacing: 0.1em;
                 text-transform: uppercase;
-                color: #f4f8ff;
+                color: #0f2027;
                 margin-bottom: 0.25rem;
                 padding-bottom: 0.42rem;
-                # border-bottom: 1px solid rgba(255, 255, 255, 0.32);
+                border-bottom: 1px solid rgba(15, 32, 39, 0.12);
             }
 
             .sb-search-label {
                 font-size: 0.84rem;
                 text-transform: uppercase;
                 letter-spacing: 0.11em;
-                color: #d8e6f5;
+                color: #3a5361;
                 font-weight: 700;
                 margin-top: 0.15rem;
                 margin-bottom: 0.22rem;
@@ -78,7 +96,7 @@ def _inject_sidebar_styles():
                 font-size: 0.84rem;
                 text-transform: uppercase;
                 letter-spacing: 0.11em;
-                color: #d8e6f5;
+                color: #3a5361;
                 font-weight: 700;
                 margin-top: 0.25rem;
                 margin-bottom: 0.2rem;
@@ -91,13 +109,13 @@ def _inject_sidebar_styles():
             .sb-section-divider {
                 margin-top: 0.55rem;
                 margin-bottom: 0.45rem;
-                border-top: 1px solid rgba(255, 255, 255, 0.24);
+                border-top: 1px solid rgba(15, 32, 39, 0.14);
             }
 
             .sb-footer {
                 margin-top: 0.95rem;
                 padding: 0;
-                color: #e5edf7;
+                color: #2a4454;
                 font-size: 0.88rem;
                 line-height: 1.45;
             }
@@ -105,21 +123,21 @@ def _inject_sidebar_styles():
             .sb-footer-divider {
                 margin-top: 1rem;
                 margin-bottom: 0.65rem;
-                border-top: 1px solid rgba(255, 255, 255, 0.26);
+                border-top: 1px solid rgba(15, 32, 39, 0.14);
             }
 
             .sb-footer strong {
                 display: block;
                 margin-bottom: 0.35rem;
-                color: #f5f8fc;
+                color: #0f2027;
             }
 
             .sb-footer em {
-                color: #c8d5e4;
+                color: #4e6877;
             }
 
             .sb-footer a {
-                color: #b2d4ff;
+                color: #1f5d8a;
                 text-decoration: none;
                 font-weight: 600;
             }
@@ -129,11 +147,11 @@ def _inject_sidebar_styles():
             }
 
             section[data-testid="stSidebar"] [data-testid="stPageLink"] a {
-                border-radius: 0;
+                border-radius: 6px;
                 padding-top: 0.12rem;
                 padding-bottom: 0.12rem;
                 padding-left: 0.1rem;
-                color: #e5edf5;
+                color: #17384b;
                 background: transparent;
                 border: none;
                 font-size: 0.98rem;
@@ -144,8 +162,8 @@ def _inject_sidebar_styles():
             }
 
             section[data-testid="stSidebar"] [data-testid="stPageLink"] a:hover {
-                background: transparent;
-                color: #cde2ff;
+                background: rgba(15, 32, 39, 0.06);
+                color: #0f2027;
             }
         </style>
         """,
