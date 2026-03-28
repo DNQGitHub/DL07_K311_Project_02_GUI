@@ -30,8 +30,67 @@ def main():
     
     sidebar.display()
 
-    st.markdown("## Các bài đăng bất động sản mới nhất trên thị trường")
-    st.markdown("Khám phá các bài đăng bất động sản mới nhất trên thị trường. Duyệt qua danh sách các căn hộ, nhà phố, và đất nền được cập nhật liên tục để tìm kiếm cơ hội đầu tư hoặc nơi an cư lý tưởng cho bạn và gia đình.")
+    st.markdown(
+        """
+        <style>
+            .stApp {
+                background: #ffffff;
+            }
+
+            header[data-testid="stHeader"] {
+                background: #ffffff;
+                border-bottom: 1px solid rgba(15, 32, 39, 0.1);
+            }
+
+            .posts-hero {
+                border-radius: 18px;
+                padding: 1.25rem 1.2rem;
+                background: linear-gradient(120deg, #0f2027 0%, #203a43 52%, #2c5364 100%);
+                color: #edf5ff;
+                box-shadow: 0 14px 34px rgba(15, 32, 39, 0.22);
+                margin-bottom: 1.2rem;
+            }
+
+            .posts-kicker {
+                font-size: 0.8rem;
+                letter-spacing: 0.12em;
+                text-transform: uppercase;
+                font-weight: 700;
+                margin-bottom: 0.35rem;
+                opacity: 0.92;
+            }
+
+            .posts-title {
+                font-size: clamp(1.45rem, 2.1vw, 1.95rem);
+                font-weight: 800;
+                line-height: 1.25;
+                margin-bottom: 0.45rem;
+            }
+
+            .posts-sub {
+                font-size: 1rem;
+                line-height: 1.55;
+                opacity: 0.98;
+            }
+        </style>
+        """,
+        unsafe_allow_html=True,
+    )
+
+    st.markdown(
+        """
+        <div class="posts-hero">
+            <div class="posts-kicker">Real Estate Listings</div>
+            <div class="posts-title">🏠 Danh sách bài đăng mới nhất</div>
+            <div class="posts-sub">
+                Khám phá các bài đăng bất động sản mới nhất trên thị trường. 
+                Duyệt qua danh sách các căn hộ, nhà phố, và đất nền được cập nhật liên tục 
+                để tìm kiếm cơ hội đầu tư hoặc nơi an cư lý tưởng cho bạn và gia đình.
+            </div>
+        </div>
+        """,
+        unsafe_allow_html=True,
+    )
     
     page, page_size = get_pagination_params()
     df = load_recommendation_data()
