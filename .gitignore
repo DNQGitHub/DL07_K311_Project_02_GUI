@@ -1,3 +1,4 @@
 __pycache__ 
-models/recommendation/*.pkl
-models/recommendation/_backup/*.pkl
+
+models/**/*.pkl
+models/**/_backup/*.pkl
