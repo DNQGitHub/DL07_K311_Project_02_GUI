@@ -27,7 +27,6 @@ def display(post):
         <div style="display: flex; flex-direction: column; gap: 10px
             ; border: 1px solid #ddd; padding: 20px; border-radius: 5px;">
             <h1 style="margin-top: 0;">{tieu_de}</h1>
-            <image src="https://picsum.photos/600/400" alt="Hình ảnh bất động sản" style="width: 100%; border-radius: 5px;">
             <p><strong>Địa chỉ:</strong> {dia_chi}</p>
             <p><strong>Giá bán:</strong> {gia_ban} VND</p>
             <p><strong>Diện tích:</strong> {dien_tich}</p>
