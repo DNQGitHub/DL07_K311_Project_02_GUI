@@ -29,12 +29,12 @@ def load_recommendation_stopwords():
         stopwords = file.read().split('\n')
     return stopwords
 
-@st.cache_data
+@st.cache_resource
 def load_recommendation_model():
     model = SentenceTransformer('features/recommendation/models/sentence_transformer_model_half.pkl')
     return model
 
-@st.cache_data
+@st.cache_resource
 def load_recommendation_embeddings():
     embeddings = pickle.load(open(RECOMMENDATION_EMBEDDINGS_PATH, 'rb'))
     return embeddings
