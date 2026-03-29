@@ -19,15 +19,6 @@ def main():
     st.markdown(
         """
         <style>
-            .stApp {
-                background: #ffffff;
-            }
-
-            header[data-testid="stHeader"] {
-                background: #ffffff;
-                border-bottom: 1px solid rgba(15, 32, 39, 0.1);
-            }
-
             .pd-section-title {
                 font-size: 1.2rem;
                 font-weight: 800;

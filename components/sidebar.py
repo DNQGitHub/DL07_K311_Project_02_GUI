@@ -12,7 +12,6 @@ def _inject_sidebar_styles():
         """
         <style>
             section[data-testid="stSidebar"] {
-                background: #ffffff;
                 border-right: 1px solid rgba(15, 32, 39, 0.08);
             }
 
@@ -34,7 +33,7 @@ def _inject_sidebar_styles():
             }
 
             section[data-testid="stSidebar"] [data-testid="stTextInput"] div[data-baseweb="input"] {
-                background: transparent !important;
+                background: #f8fbfd !important;
                 border: 1px solid rgba(15, 32, 39, 0.24) !important;
                 border-radius: 8px !important;
                 box-shadow: none !important;
@@ -50,7 +49,7 @@ def _inject_sidebar_styles():
             }
 
             section[data-testid="stSidebar"] [data-testid="stTextInput"] input {
-                background: transparent !important;
+                background: #f8fbfd !important;
                 color: #0f2027 !important;
                 -webkit-text-fill-color: #0f2027 !important;
                 caret-color: #0f2027 !important;

@@ -11,15 +11,6 @@ def main():
     st.markdown(
         """
         <style>
-            .stApp {
-                background: #ffffff;
-            }
-
-            header[data-testid="stHeader"] {
-                background: #ffffff;
-                border-bottom: 1px solid rgba(15, 32, 39, 0.1);
-            }
-
             .ta-hero {
                 border-radius: 18px;
                 padding: 1.25rem 1.2rem;
@@ -113,10 +104,64 @@ def main():
 
     # ===== DISPLAY =====
     st.markdown('<div class="ta-section-title">🗂️ Bảng chi tiết</div>', unsafe_allow_html=True)
-    st.dataframe(
-        df,
-        use_container_width=True,
-        hide_index=True,
+
+    rows_html = ""
+    for _, row in df.iterrows():
+        is_bonus = row["Công việc"].startswith("⭐")
+        row_style = "background:#fffbf0;" if is_bonus else ""
+        rows_html += f"""
+        <tr style="{row_style}">
+            <td>{row['Công việc']}</td>
+            <td style="text-align:center;">{row['Quang']}</td>
+            <td style="text-align:center;">{row['Quân']}</td>
+        </tr>"""
+
+    st.markdown(
+        f"""
+        <style>
+            .ta-table {{
+                width: 100%;
+                border-collapse: collapse;
+                font-size: 0.95rem;
+                margin-top: 0.25rem;
+            }}
+            .ta-table th {{
+                background: #edf3f6;
+                color: #0f2027;
+                font-weight: 700;
+                text-transform: uppercase;
+                letter-spacing: 0.05em;
+                font-size: 0.8rem;
+                padding: 0.65rem 0.9rem;
+                border: 1px solid rgba(15,32,39,0.14);
+                text-align: left;
+            }}
+            .ta-table th:not(:first-child) {{
+                text-align: center;
+                width: 110px;
+            }}
+            .ta-table td {{
+                padding: 0.6rem 0.9rem;
+                border: 1px solid rgba(15,32,39,0.10);
+                color: #142e3a;
+                vertical-align: middle;
+            }}
+            .ta-table tr:hover td {{
+                background: rgba(15,32,39,0.03);
+            }}
+        </style>
+        <table class="ta-table">
+            <thead>
+                <tr>
+                    <th>Công việc</th>
+                    <th>Quang</th>
+                    <th>Quân</th>
+                </tr>
+            </thead>
+            <tbody>{rows_html}</tbody>
+        </table>
+        """,
+        unsafe_allow_html=True,
     )
 
     # ===== NOTE =====

@@ -1,2 +1,39 @@
 [client]
 showSidebarNavigation = false
+
+[theme]
+base = "light"
+
+# Accent / interactive elements (buttons, focus rings, selected items)
+primaryColor = "#ff4757"
+
+# Main content area background
+backgroundColor = "#feffff"
+
+# Widget input backgrounds + secondary surfaces (hover, code blocks, headers)
+secondaryBackgroundColor = "#edf3f6"
+
+# Main body text
+textColor = "#0f2027"
+
+# Links
+linkColor = "#1f5d8a"
+linkUnderline = false
+
+# Borders around elements (forms, expanders, dataframes, etc.)
+borderColor = "rgba(15, 32, 39, 0.14)"
+showWidgetBorder = true
+
+# Corner radius
+baseRadius = "medium"
+
+# Chart series colors (matches app accent palette)
+chartCategoricalColors = ["#ff4757", "#2c5364", "#ff6b35", "#0068c9", "#29b09d", "#ffa421", "#6d3fc0"]
+
+[theme.sidebar]
+# Light blue sidebar background
+backgroundColor = "#feffff"
+secondaryBackgroundColor = "#edf3f6"
+primaryColor = "#ff4757"
+borderColor = "rgba(15, 32, 39, 0.10)"
+showWidgetBorder = false

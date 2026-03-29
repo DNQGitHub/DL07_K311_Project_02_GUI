@@ -13,15 +13,6 @@ def main():
     st.markdown(
         """
         <style>
-            .stApp {
-                background: #ffffff;
-            }
-
-            header[data-testid="stHeader"] {
-                background: #ffffff;
-                border-bottom: 1px solid rgba(15, 32, 39, 0.1);
-            }
-
             .mc-hero {
                 border-radius: 18px;
                 padding: 1.25rem 1.2rem;
