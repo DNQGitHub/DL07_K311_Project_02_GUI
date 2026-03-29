@@ -4,42 +4,36 @@ showSidebarNavigation = false
 [theme]
 base = "light"
 
-# Shared accents and shape settings for both light/dark themes
+# Accent / interactive elements (buttons, focus rings, selected items)
 primaryColor = "#ff4757"
-linkColor = "#1f5d8a"
-linkUnderline = false
-showWidgetBorder = true
-baseRadius = "medium"
-chartCategoricalColors = ["#ff4757", "#2c5364", "#ff6b35", "#0068c9", "#29b09d", "#ffa421", "#6d3fc0"]
 
-[theme.light]
 # Main content area background
 backgroundColor = "#feffff"
+
 # Widget input backgrounds + secondary surfaces (hover, code blocks, headers)
 secondaryBackgroundColor = "#edf3f6"
+
 # Main body text
 textColor = "#0f2027"
+
+# Links
+linkColor = "#1f5d8a"
+linkUnderline = false
+
 # Borders around elements (forms, expanders, dataframes, etc.)
 borderColor = "rgba(15, 32, 39, 0.14)"
+showWidgetBorder = true
 
-[theme.light.sidebar]
+# Corner radius
+baseRadius = "medium"
+
+# Chart series colors (matches app accent palette)
+chartCategoricalColors = ["#ff4757", "#2c5364", "#ff6b35", "#0068c9", "#29b09d", "#ffa421", "#6d3fc0"]
+
+[theme.sidebar]
 # Light blue sidebar background
 backgroundColor = "#feffff"
 secondaryBackgroundColor = "#edf3f6"
 primaryColor = "#ff4757"
 borderColor = "rgba(15, 32, 39, 0.10)"
-showWidgetBorder = false
-
-[theme.dark]
-# Dark mode surfaces keep the same brand accent but use high-contrast text/background
-backgroundColor = "#0e1a22"
-secondaryBackgroundColor = "#162a36"
-textColor = "#e8f1f5"
-borderColor = "rgba(232, 241, 245, 0.18)"
-
-[theme.dark.sidebar]
-backgroundColor = "#0b141b"
-secondaryBackgroundColor = "#162a36"
-primaryColor = "#ff4757"
-borderColor = "rgba(232, 241, 245, 0.12)"
 showWidgetBorder = false
