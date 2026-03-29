@@ -64,6 +64,28 @@ def main():
                 text-align: center;
             }
 
+            div[data-testid="stForm"] div[data-baseweb="input"],
+            div[data-testid="stForm"] div[data-baseweb="select"] > div,
+            div[data-testid="stForm"] textarea {
+                background: #f8fbfd !important;
+                border-color: rgba(15, 32, 39, 0.14) !important;
+                box-shadow: none !important;
+            }
+
+            div[data-testid="stForm"] input,
+            div[data-testid="stForm"] textarea {
+                background: #f8fbfd !important;
+                color: #0f2027 !important;
+                -webkit-text-fill-color: #0f2027 !important;
+            }
+
+            div[data-testid="stForm"] [data-testid="stNumberInputStepUp"],
+            div[data-testid="stForm"] [data-testid="stNumberInputStepDown"] {
+                background: #f8fbfd !important;
+                border-left: 1px solid rgba(15, 32, 39, 0.14) !important;
+                color: #0f2027 !important;
+            }
+
             /* Button styling - more aggressive selectors */
             div[data-testid="stFormSubmitButton"] button {
                 background: linear-gradient(135deg, #ff6b35 0%, #ff4757 100%) !important;
