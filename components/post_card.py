@@ -110,7 +110,7 @@ def display(row, index):
             <div class="post-card-info">
                 <div class="post-card-item">
                     <div class="post-card-label">Diện tích</div>
-                    <div class="post-card-value">{dien_tich} m²</div>
+                    <div class="post-card-value">{dien_tich}</div>
                 </div>
                 <div class="post-card-item">
                     <div class="post-card-label">Phòng ngủ</div>
