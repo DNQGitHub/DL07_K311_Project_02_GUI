@@ -40,6 +40,6 @@ def clusterize(user_df, our_df):
     print(user_df_optimized.head(1))
     print(df_optimized[df_optimized["segment"] == 1].head(1))
     
-    labels = ["Bình dân", "Cao cấp", "Siêu sang", "Ultra Premium", "Ultra"]
+    labels = ["Bình dân", "Cao cấp"]
     
     return { "cluster_label": cluster_label[0], "cluster_name": labels[cluster_label[0]] }
