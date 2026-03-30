@@ -77,7 +77,8 @@ def main():
                 transform: translateY(-4px) !important;
                 background: linear-gradient(135deg, #ff7f50 0%, #ff6b6b 100%) !important;
             }
-            div[data-testid="stBaseButton-primary"] button {
+            div[data-testid="stBaseButton-primary"] button,
+            button[data-testid="stBaseButton-primary"] {
                 background: linear-gradient(135deg, #ff6b35 0%, #ff4757 100%) !important;
                 color: #ffffff !important;
                 box-shadow: 0 10px 30px rgba(255, 71, 87, 0.4) !important;
@@ -90,7 +91,8 @@ def main():
                 text-transform: uppercase !important;
                 border-radius: 8px !important;
             }
-            div[data-testid="stBaseButton-primary"] button:hover {
+            div[data-testid="stBaseButton-primary"] button:hover,
+            button[data-testid="stBaseButton-primary"]:hover {
                 box-shadow: 0 16px 40px rgba(255, 71, 87, 0.6) !important;
                 transform: translateY(-4px) !important;
                 background: linear-gradient(135deg, #ff7f50 0%, #ff6b6b 100%) !important;

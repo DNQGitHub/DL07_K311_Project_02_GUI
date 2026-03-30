@@ -94,7 +94,9 @@ def _render_upload_section(our_df):
         '<div style="font-size: 0.88rem; font-weight: 700; color: #142e3a; margin-top: 0.8rem; margin-bottom: 0.3rem;">Xem trước dữ liệu:</div>',
         unsafe_allow_html=True,
     )
-    st.dataframe(batch_df.head(), use_container_width=True)
+    preview_df = batch_df.head().copy()
+    preview_df.insert(0, "STT", range(1, len(preview_df) + 1))
+    st.dataframe(preview_df, use_container_width=True, hide_index=True)
 
     missing_cols = [c for c in REQUIRED_COLS if c not in batch_df.columns]
     if missing_cols:
@@ -163,15 +165,20 @@ def _render_upload_section(our_df):
         }
         display_cols = [c for c in REQUIRED_COLS if c in result_df_full.columns] + ["cluster_name"]
 
-        header_cells = "".join(
+        stt_th = (
+            '<th style="padding:0.5rem 0.75rem; text-align:left; font-size:0.82rem; '
+            'font-weight:700; color:#142e3a; border-bottom:2px solid #e0e7ef; white-space:nowrap;">STT</th>'
+        )
+        header_cells = stt_th + "".join(
             f'<th style="padding:0.5rem 0.75rem; text-align:left; font-size:0.82rem; '
             f'font-weight:700; color:#142e3a; border-bottom:2px solid #e0e7ef; white-space:nowrap;">{col_labels.get(c, c)}</th>'
             for c in display_cols
         )
 
         rows_html = ""
-        for _, row in result_df_full.iterrows():
-            cells = ""
+        for i, (_, row) in enumerate(result_df_full.iterrows(), start=1):
+            stt_cell = f'<td style="padding:0.5rem 0.75rem; border-bottom:1px solid #edf2f7; vertical-align:top; color:#6b7280; font-size:0.82rem;">{i}</td>'
+            cells = stt_cell
             for c in display_cols:
                 val = row[c]
                 if c == "cluster_name":
@@ -201,7 +208,7 @@ def _render_upload_section(our_df):
         b64 = base64.b64encode(csv_data.encode("utf-8")).decode()
         st.markdown(
             f'<a href="data:text/csv;base64,{b64}" download="clustering_result.csv" '
-            f'style="font-size: 0.95rem; color: #1a56db; text-decoration: underline; '
-            f'font-weight: 600; cursor: pointer;">⬇️ Tải kết quả (CSV)</a>',
+            f'style="display:inline-block; margin-top:8px; font-size: 0.95rem; color: #1a56db; '
+            f'text-decoration: underline; font-weight: 600; cursor: pointer;">Tải kết quả (CSV)</a>',
             unsafe_allow_html=True,
         )
