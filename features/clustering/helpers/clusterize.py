@@ -26,9 +26,12 @@ def clusterize(user_df, our_df):
         if col in df_optimized.columns:
             df_optimized[col] = np.log1p(df_optimized[col])  # log(1+x) để handle 0
 
+    # Fill NaN with median to preserve all rows
+    df_optimized = df_optimized.fillna(df_optimized.median(numeric_only=True))
+
     # Scale
     scaler_opt = StandardScaler()
-    x_optimized = scaler_opt.fit_transform(df_optimized.dropna())            
+    x_optimized = scaler_opt.fit_transform(df_optimized)            
     
     model = load_clustering_model() 
     cluster_label = model.fit_predict(x_optimized)
